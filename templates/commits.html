@@ -9,7 +9,8 @@
 </head>
 
 <body>
-    <h1>Commits Graph</h1>
+    <div class="container">
+    <h1>Le graphe de mes Commits </h1>
     <canvas id="commitsChart" width="400" height="200"></canvas>
     <script>
         async function fetchCommitsData() {
@@ -21,7 +22,7 @@
         function renderChart(commitMinutes) {
             const ctx = document.getElementById('commitsChart').getContext('2d');
             const chart = new Chart(ctx, {
-                type: 'line', // Vous pouvez aussi utiliser 'bar', 'pie', etc.
+                type: 'bar', 
                 data: {
                     labels: commitMinutes.map((minute, index) => index + 1),
                     datasets: [{
@@ -46,7 +47,8 @@
             const commitMinutes = await fetchCommitsData();
             renderChart(commitMinutes);
         });
-    </script>
+        </script>
+    </div>
 </body>
 
 </html>
