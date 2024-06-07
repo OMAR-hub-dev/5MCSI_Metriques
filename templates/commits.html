@@ -11,7 +11,7 @@
 <body>
     <div class="container">
     <h1>Le graphe de mes Commits </h1>
-    <canvas id="commitsChart" width="400" height="200"></canvas>
+    <canvas id="commitsChart" width="300" height="150"></canvas>
     <script>
         async function fetchCommitsData() {
             const response = await fetch('/commits/data');
@@ -28,8 +28,8 @@
                     datasets: [{
                         label: 'Commits par Minute',
                         data: commitMinutes,
-                        borderColor: '#ff6b6b',
-                        backgroundColor: '#c8d6e5',
+                        borderColor: '#c8d6e5',
+                        backgroundColor: '#ff6b6b',
                         borderWidth: 1
                     }]
                 },
