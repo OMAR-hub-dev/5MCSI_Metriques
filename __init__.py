@@ -23,6 +23,25 @@ def mongraphique():
 def histogramme():
     return render_template("histogramme.html")
   
+@app.route("/commits/")
+def commit():
+    return render_template("commits.html")
+
+@app.route('/commits/data')
+def get_commits_data():
+    url = 'https://github.com/OMAR-hub-dev/5MCSI_Metriques/commits'
+    response = urlopen(url)
+    raw_content = response.read()
+    json_content = json.loads(raw_content.decode('utf-8'))
+
+    commit_minutes = []
+    for commit in json_content:
+        date_string = commit['commit']['author']['date']
+        date_object = datetime.strptime(date_string, '%Y-%m-%dT%H:%M:%SZ')
+        commit_minutes.append(date_object.minute)
+
+    return jsonify(commit_minutes=commit_minutes)
+  
 @app.route('/tawarano/')
 def meteo():
     response = urlopen('https://samples.openweathermap.org/data/2.5/forecast?lat=0&lon=0&appid=xxx')
