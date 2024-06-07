@@ -20,7 +20,7 @@
         }
 
         function renderChart(commitMinutes) {
-            const ctx = document.getElementById('commitsChart').getContext('2d');
+            const ctx = document.getElementById('commitsChart').getContext('3d');
             const chart = new Chart(ctx, {
                 type: 'bar', 
                 data: {
@@ -28,8 +28,8 @@
                     datasets: [{
                         label: 'Commits par Minute',
                         data: commitMinutes,
-                        borderColor: '#c8d6e5',
-                        backgroundColor: '#ff6b6b',
+                        borderColor: '#ff6b6b',
+                        backgroundColor: '#c8d6e5',
                         borderWidth: 1
                     }]
                 },
