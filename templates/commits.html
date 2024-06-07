@@ -22,7 +22,7 @@
         }
 
         function renderChart(commitMinutes) {
-            const ctx = document.getElementById('commitsChart').getContext('3d');
+            const ctx = document.getElementById('commitsChart').getContext('2d');
             const chart = new Chart(ctx, {
                 type: 'bar', 
                 data: {
