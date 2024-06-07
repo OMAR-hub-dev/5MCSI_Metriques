@@ -7,7 +7,10 @@
     <title>Mes Commits </title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
    <style>
-    .conainer{ width: 800px;
+    .conainer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
    </style>
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
@@ -17,7 +20,7 @@
 <body>
     <div class="container">
     <h1>Le graphe de mes Commits </h1>
-    <canvas id="commitsChart" width="300" height="150"></canvas>
+    <div id="commitsChart" width="950" height="500"></div>
     <script>
         async function fetchCommitsData() {
             const response = await fetch('/commits/data');

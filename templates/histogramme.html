@@ -8,19 +8,16 @@
   <style>
     body{ font-family : Arial, sans-serif;
        background-color:#c8d6e5;
-       height: 100vh;
+       /* height: 100vh; */
        display: flex;
        justify-content: center;
        align-items: center;
       };
-    #chart_div {
-      width: 800px;
-      height: 600px;
-    }
+   
   </style>
 </head>
 <body>
-  <div id="chart_div"></div>
+  <div id="chart_div" width="850" height="450"></div>
   <script>
     google.charts.load('current', { packages: ['corechart'] });
     google.charts.setOnLoadCallback(drawBackgroundColor);
