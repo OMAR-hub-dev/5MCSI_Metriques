@@ -29,7 +29,7 @@ def commit():
 
 @app.route('/commits/data')
 def get_commits_data():
-    url = 'https://github.com/OMAR-hub-dev/5MCSI_Metriques/commits'
+    url = 'https://api.github.com/repos/OMAR-hub-dev/5MCSI_Metriques/commits'
     response = urlopen(url)
     raw_content = response.read()
     json_content = json.loads(raw_content.decode('utf-8'))
